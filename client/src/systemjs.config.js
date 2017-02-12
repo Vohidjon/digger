@@ -4,9 +4,10 @@
  */
 (function (global) {
   System.config({
+    baseURL: '/client/src/',
     paths: {
       // paths serve as alias
-      'npm:': 'node_modules/'
+      'npm:': '/client/node_modules/'
     },
     // map tells the System loader where to look for things
     map: {
