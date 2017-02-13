@@ -1,0 +1,13 @@
+<div class="top-panel">
+  <form>
+    <div class="input-group" style="width: 360px">
+      <input type="text" class="form-control" [(ngModel)]="query">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Search</button>
+      </span>
+    </div>
+  </form>
+</div>
+<div class="main-panel">
+  <candidate-item *ngFor="let candidate of candidates"></candidate-item>
+</div>

@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  moduleId: module.id,
+  selector: 'app',
+  templateUrl: 'app.html',
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent {
+  candidates: Candidate[];
+  query: string;
+}
