@@ -4,7 +4,7 @@
  */
 (function (global) {
   System.config({
-    baseURL: '/client/src/',
+    baseURL: '/client/',
     paths: {
       // paths serve as alias
       'npm:': '/client/node_modules/'
