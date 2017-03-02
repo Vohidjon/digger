@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^api/(.*) api/web/index.php/$1 [L]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^client/(.*) client/$1 [L]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^(.*) client/index.html
