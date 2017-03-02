@@ -42,6 +42,10 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'mongodb' => [
+            'class' => '\yii\mongodb\Connection',
+            'dsn' => 'mongodb://developer:12@localhost:27017/recruitly',
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => true
