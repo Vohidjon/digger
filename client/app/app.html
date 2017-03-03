@@ -9,5 +9,5 @@
   </form>
 </div>
 <div class="main-panel">
-  <div *ngFor="let candidate of candidates"></div>
+  <div *ngFor="let candidate of candidates | async"></div>
 </div>
