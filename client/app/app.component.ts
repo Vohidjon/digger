@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Candidate} from './candidate.model';
-import {CandidateService} from 'candidate.service';
+import {CandidateService} from './candidate.service';
 
 import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
@@ -11,11 +11,12 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   moduleId: module.id,
   selector: 'app',
-  templateUrl: 'app.html',
+  templateUrl: 'app.html'
 })
 export class AppComponent implements OnInit{
   candidates: Observable<Candidate[]>;
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.candidates = this.queries
       .debounceTime(300) // wait 300ms after each keystroke before considering the term
-      .distincUnitChanged() // ignore if next search query is the same as previous
+      .distinctUntilChanged() // ignore if next search query is the same as previous
       .switchMap(query => // switch to new observable each time the term changes
         // return the http search observable
         query

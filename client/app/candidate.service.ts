@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import {Candidate} from 'candidate.model';
+import {Candidate} from './candidate.model';
 
 @Injectable()
 export class CandidateService {
