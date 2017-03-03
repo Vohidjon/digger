@@ -13,6 +13,6 @@ export class CandidateService {
   search(term: string): Observable<Candidate[]> {
     return this.http
       .get(`api/candidate?q=${term}`)
-      .map(response => response.json().data as Candidate[]);
+      .map(response => response.json() as Candidate[]);
   }
 }

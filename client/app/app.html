@@ -9,5 +9,7 @@
   </form>
 </div>
 <div class="main-panel">
-  <div *ngFor="let candidate of candidates | async"></div>
+  <div *ngFor="let candidate of candidates | async">
+    {{candidate.name}}
+  </div>
 </div>

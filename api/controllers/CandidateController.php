@@ -18,8 +18,13 @@ class CandidateController extends Controller
         ];
         return $behaviors;
     }
+
     public function actionIndex()
     {
-        return ['John', 'Oybek', 'Sergey'];
+        return [
+            ['name' => 'John'],
+            ['name' => 'Oybek'],
+            ['name' => 'Sergey']
+        ];
     }
 }

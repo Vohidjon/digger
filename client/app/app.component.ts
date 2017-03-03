@@ -18,9 +18,10 @@ import 'rxjs/add/operator/switchMap';
   selector: 'app',
   templateUrl: 'app.html'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   candidates: Observable<Candidate[]>;
   private queries = new Subject<string>();
+
   constructor(private candidateService: CandidateService) {
   }
 
@@ -37,11 +38,11 @@ export class AppComponent implements OnInit{
         query
           ? this.candidateService.search(query)
           // or the observable of empty candidates if there was no search term
-          : Observable.of<Candidate[]>([])
-          .catch(error => {
-            console.log(error);
-            return Observable.of<Candidate[]>([]);
-          })
-      );
+          : Observable.of<Candidate[]>([]))
+      .catch(error => {
+        console.log(error);
+        return Observable.of<Candidate[]>([]);
+      });
+    this.candidates.subscribe(candidates => console.log(candidates));
   }
 }
