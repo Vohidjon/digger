@@ -1,3 +1,8 @@
 export class Candidate {
-  name: string;
+  _id: string;
+  DISPLAYNAME: string;
+  WEBSITEURL: string;
+  LOCATION: string;
+  AGE: number;
+  PROFILEIMAGEURL: string;
 }
