@@ -22,6 +22,7 @@ class CandidateController extends Controller
 
     public function actionIndex()
     {
-        return Candidate::find()->limit(100)->all();
+        $q = \Yii::$app->request->getQueryParam('q');
+        return Candidate::find()->andFilterCompare('DISPLAYNAME', $q)->limit(100)->all();
     }
 }
