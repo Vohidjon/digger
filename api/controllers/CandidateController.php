@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+use app\models\Candidate;
 use yii\filters\ContentNegotiator;
 use yii\rest\Controller;
 use yii\web\Response;
@@ -21,10 +22,6 @@ class CandidateController extends Controller
 
     public function actionIndex()
     {
-        return [
-            ['name' => 'John'],
-            ['name' => 'Oybek'],
-            ['name' => 'Sergey']
-        ];
+        return Candidate::find()->limit(100)->all();
     }
 }

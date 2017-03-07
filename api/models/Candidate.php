@@ -2,6 +2,23 @@
 
 namespace app\models;
 
-class Candidate {
+use yii\mongodb\ActiveRecord;
 
+class Candidate extends ActiveRecord {
+    public function attributes()
+    {
+        return [
+            '_id',
+            'DISPLAYNAME',
+            'WEBSITEURL',
+            'LOCATION',
+            'AGE',
+            'PROFILEIMAGEURL'
+        ];
+    }
+
+    public static function collectionName()
+    {
+        return 'users';
+    }
 }
