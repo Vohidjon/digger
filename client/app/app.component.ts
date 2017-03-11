@@ -43,6 +43,5 @@ export class AppComponent implements OnInit {
         console.log(error);
         return Observable.of<Candidate[]>([]);
       });
-    this.candidates.subscribe(candidates => console.log(candidates));
   }
 }

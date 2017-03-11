@@ -9,6 +9,7 @@ class Candidate extends ActiveRecord {
     {
         return [
             '_id',
+            'ID',
             'DISPLAYNAME',
             'WEBSITEURL',
             'LOCATION',
