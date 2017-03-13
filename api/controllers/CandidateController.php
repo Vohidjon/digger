@@ -2,12 +2,19 @@
 namespace app\controllers;
 
 use app\models\Candidate;
+use app\models\UserTag;
+use yii\data\ActiveDataProvider;
 use yii\filters\ContentNegotiator;
 use yii\rest\Controller;
 use yii\web\Response;
 
 class CandidateController extends Controller
 {
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'data',
+        'metaEnvelope' => 'meta'
+    ];
     public function behaviors()
     {
         $behaviors = parent::behaviors();
@@ -24,7 +31,7 @@ class CandidateController extends Controller
     {
         $q = \Yii::$app->request->getQueryParam('q');
         $tags = explode(' ', strtolower($q));
-        $userTags = Candidate::find()->where(['tg' => 'sql'])->with('candidate')->limit(10)->all();
-        return Candidate::find()->limit(100)->all();
+        $query = Candidate::find()->with(['candidateTags'])->where(['candidateTags.tag' => 'angular']);
+        return new ActiveDataProvider(['query' => $query]);
     }
 }
